@@ -1,0 +1,37 @@
+.main-header {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .main-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #4f46e5;
+  }
+  
+  .main-header nav {
+    margin-top: 10px;
+  }
+  
+  .main-header nav a {
+    color: #4f46e5;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+  }
+  
+  .main-header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .main-footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f3f4f6;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+  }
+  
