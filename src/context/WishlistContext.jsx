@@ -1,9 +1,18 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
-  const [wishlistItems, setWishlistItems] = useState([]);
+  // Initialize wishlist items from localStorage or empty array
+  const [wishlistItems, setWishlistItems] = useState(() => {
+    const savedWishlist = localStorage.getItem('flourshop-wishlist');
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
+  });
+
+  // Save wishlist items to localStorage whenever wishlistItems changes
+  useEffect(() => {
+    localStorage.setItem('flourshop-wishlist', JSON.stringify(wishlistItems));
+  }, [wishlistItems]);
 
   const addToWishlist = (product) => {
     const exists = wishlistItems.find((item) => item.id === product.id);
