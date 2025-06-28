@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { dummyProducts } from "../data/dummyProducts";
 import ProductCard from "./ProductCard";
+import Carousel from "./Carousel";
 import "../styles/main.css";
 
 const SearchBar = () => {
@@ -21,6 +22,8 @@ const SearchBar = () => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search flour products..."
       />
+
+      <Carousel />
 
       <h2 style={{ marginTop: "30px" }}>
         {query ? "Search Results:" : "All Products"}
