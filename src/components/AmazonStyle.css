@@ -21,6 +21,21 @@
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+  
+.logo-image {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+  
+.logo-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
 }
   
 .amazon-nav {
@@ -412,6 +427,8 @@
 body {
     margin: 0;
     padding: 0;
+   
+
 }
 
 /* Header search icon (appears on scroll) */
@@ -812,4 +829,3 @@ body {
     right: -6px;
   }
 }
-
