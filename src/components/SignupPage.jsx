@@ -41,6 +41,16 @@ const SignupPage = () => {
       return;
     }
 
+    // Save user credentials to localStorage for demo login
+    localStorage.setItem(
+      `flourshop-user-creds-${formData.email}`,
+      JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+        name: formData.name
+      })
+    );
+
     // Mock signup - in real app, this would be an API call
     const userData = {
       id: Date.now(), // Generate unique ID
