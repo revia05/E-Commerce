@@ -39,6 +39,7 @@ const Header = () => {
       <div className="amazon-nav">
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/signin" className="signin-link">Sign In</Link>
         <Link to="/cart" className="cart-link">
           <div className="cart-icon-container">
             <svg 
@@ -60,7 +61,6 @@ const Header = () => {
               <span className="cart-count">{cartItems.length}</span>
             )}
           </div>
-          <span className="cart-text">Cart</span>
         </Link>
         {scrolled && (
           <button
@@ -110,4 +110,3 @@ const Header = () => {
 };
 
 export default Header;
-
