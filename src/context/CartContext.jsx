@@ -1,9 +1,18 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  // Initialize cart items from localStorage or empty array
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem('flourshop-cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // Save cart items to localStorage whenever cartItems changes
+  useEffect(() => {
+    localStorage.setItem('flourshop-cart', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product) => {
     const exists = cartItems.find((item) => item.id === product.id);
@@ -26,3 +35,4 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
