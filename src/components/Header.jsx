@@ -13,6 +13,9 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const floatingInputRef = useRef(null);
 
+  // Calculate total quantity of all products in cart
+  const totalCartQuantity = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
@@ -81,8 +84,8 @@ const Header = () => {
               <circle cx="20" cy="21" r="1"></circle>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
-            {cartItems.length > 0 && (
-              <span className="cart-count">{cartItems.length}</span>
+            {totalCartQuantity > 0 && (
+              <span className="cart-count">{totalCartQuantity}</span>
             )}
           </div>
         </Link>
