@@ -658,3 +658,108 @@ nav a:hover {
     min-height: 120px;
   }
 }
+
+/* Responsive Product Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Responsive Search Bar */
+.search-container {
+  padding: 24px 4vw;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff;
+  min-height: 80vh;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    padding: 12px 2vw;
+    min-height: 60vh;
+  }
+}
+
+.search-container input[type="text"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: 0.2s border ease;
+}
+
+@media (max-width: 600px) {
+  .search-container input[type="text"] {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+}
+
+/* Responsive Amazon Card */
+.amazon-card {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.amazon-card img {
+  height: 160px;
+}
+
+@media (max-width: 900px) {
+  .amazon-card img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .amazon-card img {
+    height: 90px;
+  }
+}
+
+/* Responsive Footer */
+.amazon-footer {
+  margin-top: 40px;
+  background-color: #232f3e;
+  color: #fff;
+  text-align: center;
+  padding: 16px 4vw;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
