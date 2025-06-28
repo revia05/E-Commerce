@@ -35,7 +35,10 @@ const Header = () => {
   return (
     <header className="amazon-header">
       <div className="amazon-logo">
-        <Link to="/">🛒 FlourShop</Link>
+        <Link to="/">
+          <img src="/img/logo.png" alt="FlourShop Logo" className="logo-image" />
+          <span className="logo-text">FlourShop</span>
+        </Link>
       </div>
 
       <div className="amazon-nav">
@@ -130,3 +133,4 @@ const Header = () => {
 };
 
 export default Header;
+
