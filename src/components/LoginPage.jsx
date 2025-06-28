@@ -23,24 +23,31 @@ const LoginPage = () => {
     e.preventDefault();
     setError("");
 
-    // Simple validation
     if (!formData.email || !formData.password) {
       setError("Please fill in all fields");
       return;
     }
 
-    // Mock login - in real app, this would be an API call
-    if (formData.email && formData.password) {
-      const userData = {
-        id: 1,
-        name: formData.email.split('@')[0], // Use email prefix as name
-        email: formData.email
-      };
-      login(userData);
-      navigate('/');
-    } else {
-      setError("Invalid credentials");
+    // Check credentials from localStorage
+    const storedCreds = localStorage.getItem(`flourshop-user-creds-${formData.email}`);
+    if (!storedCreds) {
+      setError("No account found with this email");
+      return;
     }
+    const creds = JSON.parse(storedCreds);
+    if (creds.password !== formData.password) {
+      setError("Incorrect password, try again");
+      return;
+    }
+
+    // Mock login
+    const userData = {
+      id: 1,
+      name: creds.name,
+      email: creds.email
+    };
+    login(userData);
+    navigate('/');
   };
 
   return (
