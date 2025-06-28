@@ -10,34 +10,40 @@ import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import OrdersPage from "./components/OrdersPage";
+import CheckoutPage from "./components/CheckoutPage";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import { AuthProvider } from "./context/AuthContext";
+import { OrdersProvider } from "./context/OrdersContext";
 import "./styles/main.css";
 
 const App = () => (
   <AuthProvider>
     <CartProvider>
       <WishlistProvider>
-        <Router>
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<SearchBar />} />
-              <Route path="/about" element={<AboutPage />} />    
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/wishlist" element={<WishlistPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignupPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </Router>
+        <OrdersProvider>
+          <Router>
+            <Header />
+            <main>
+              <Routes>
+                <Route path="/" element={<SearchBar />} />
+                <Route path="/about" element={<AboutPage />} />    
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/wishlist" element={<WishlistPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/orders" element={<OrdersPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+              </Routes>
+            </main>
+            <Footer />
+          </Router>
+        </OrdersProvider>
       </WishlistProvider>
     </CartProvider>
   </AuthProvider>
 );
 
 export default App;
-
