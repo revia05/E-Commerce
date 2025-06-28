@@ -14,6 +14,11 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('flourshop-cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
+  const setCartItemsAndPersist = (items) => {
+    setCartItems(items);
+    localStorage.setItem('flourshop-cart', JSON.stringify(items));
+  };
+
   // Always increase quantity for existing products
   const addToCart = (product) => {
     const exists = cartItems.find((item) => item.id === product.id);
@@ -43,7 +48,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity, decreaseQuantity }}>
+    <CartContext.Provider value={{ cartItems, setCartItems: setCartItemsAndPersist, addToCart, removeFromCart, increaseQuantity, decreaseQuantity }}>
       {children}
     </CartContext.Provider>
   );
