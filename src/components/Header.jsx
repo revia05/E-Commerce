@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 import "./AmazonStyle.css";
 
 const Header = () => {
   const { cartItems } = useContext(CartContext);
+  const { wishlistItems } = useContext(WishlistContext);
   const [showFloatingSearch, setShowFloatingSearch] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -38,6 +40,26 @@ const Header = () => {
 
       <div className="amazon-nav">
         <Link to="/signin" className="signin-link">Sign In</Link>
+        <Link to="/wishlist" className="wishlist-link">
+          <div className="wishlist-icon-container">
+            <svg 
+              className="wishlist-icon" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            {wishlistItems.length > 0 && (
+              <span className="wishlist-count">{wishlistItems.length}</span>
+            )}
+          </div>
+        </Link>
         <Link to="/cart" className="cart-link">
           <div className="cart-icon-container">
             <svg 
@@ -108,4 +130,3 @@ const Header = () => {
 };
 
 export default Header;
-
