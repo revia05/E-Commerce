@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import "./AmazonStyle.css";
 
 const CartPage = () => {
   const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
   const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
@@ -16,6 +18,10 @@ const CartPage = () => {
       </div>
     );
   }
+
+  const handleCheckout = () => {
+    navigate("/checkout");
+  };
 
   return (
     <div className="cart-page">
@@ -47,7 +53,7 @@ const CartPage = () => {
         <div className="cart-summary">
           <h2>Subtotal ({totalItems} items):</h2>
           <div className="cart-summary-price">₹{totalPrice}</div>
-          <button className="amazon-btn cart-checkout-btn" onClick={() => alert('Proceed to checkout (not implemented)')}>Proceed to Checkout</button>
+          <button className="amazon-btn cart-checkout-btn" onClick={handleCheckout}>Proceed to Checkout</button>
         </div>
       </div>
     </div>
