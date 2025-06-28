@@ -63,7 +63,10 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <div className="footer-logo">
-            <Link to="/">🛒 FlourShop</Link>
+            <Link to="/">
+              <img src="/img/logo.png" alt="FlourShop Logo" className="footer-logo-image" />
+              <span className="footer-logo-text">FlourShop</span>
+            </Link>
           </div>
           <div className="footer-bottom-links">
             <Link to="/terms">Terms of Use</Link>
