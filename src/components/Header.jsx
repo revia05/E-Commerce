@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
+import AccountDropdown from "./AccountDropdown";
 import "./AmazonStyle.css";
 
 const Header = () => {
@@ -42,7 +43,7 @@ const Header = () => {
       </div>
 
       <div className="amazon-nav">
-        <Link to="/signin" className="signin-link">Sign In</Link>
+        <AccountDropdown />
         <Link to="/wishlist" className="wishlist-link">
           <div className="wishlist-icon-container">
             <svg 
@@ -133,4 +134,3 @@ const Header = () => {
 };
 
 export default Header;
-
