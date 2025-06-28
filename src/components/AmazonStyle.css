@@ -1523,3 +1523,127 @@ body {
   }
 }
 
+.auth-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.order-card {
+  background: #faf8f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.order-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #131921;
+  font-weight: 500;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.order-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  padding: 10px 16px;
+  min-width: 220px;
+  max-width: 100%;
+  flex: 1 1 220px;
+  box-sizing: border-box;
+}
+
+.order-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.order-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-item-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #131921;
+}
+
+.order-item-qty {
+  font-size: 14px;
+  color: #333;
+}
+
+.order-item-price {
+  font-size: 14px;
+  color: #B12704;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .order-items {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .order-item {
+    min-width: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .order-card {
+    padding: 12px 4px;
+  }
+  .order-item {
+    min-width: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .order-item-image {
+    width: 48px;
+    height: 48px;
+  }
+}
+

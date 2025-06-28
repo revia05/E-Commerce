@@ -15,6 +15,7 @@ const CheckoutPage = () => {
     phone: ""
   });
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
   const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
@@ -48,7 +49,10 @@ const CheckoutPage = () => {
     };
     addOrder(order);
     setCartItems([]);
-    navigate("/orders");
+    setSuccess(true);
+    setTimeout(() => {
+      navigate("/orders");
+    }, 2000);
   };
 
   return (
@@ -58,6 +62,7 @@ const CheckoutPage = () => {
         <form className="checkout-form" onSubmit={handlePlaceOrder}>
           <h2>Shipping Information</h2>
           {error && <div className="auth-error">{error}</div>}
+          {success && <div className="auth-success">Order placed successfully! Redirecting to your orders...</div>}
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
             <input type="text" id="name" name="name" value={shipping.name} onChange={handleChange} required />
@@ -70,7 +75,7 @@ const CheckoutPage = () => {
             <label htmlFor="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone" value={shipping.phone} onChange={handleChange} required />
           </div>
-          <button type="submit" className="amazon-btn cart-checkout-btn">Place Order</button>
+          <button type="submit" className="amazon-btn cart-checkout-btn" disabled={success}>Place Order</button>
         </form>
         <div className="cart-summary checkout-summary">
           <h2>Order Summary</h2>
