@@ -14,6 +14,7 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('flourshop-cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
+  // Always increase quantity for existing products
   const addToCart = (product) => {
     const exists = cartItems.find((item) => item.id === product.id);
     if (exists) {
