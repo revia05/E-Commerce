@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
 import "./AmazonStyle.css";
@@ -6,9 +6,21 @@ import "./AmazonStyle.css";
 const ProductCard = ({ product }) => {
   const { cartItems, addToCart } = useContext(CartContext);
   const { wishlistItems, addToWishlist, isInWishlist } = useContext(WishlistContext);
+  const [showAddedMessage, setShowAddedMessage] = useState(false);
   
   const isInCart = cartItems.some((item) => item.id === product.id);
   const isInWishlistState = isInWishlist(product.id);
+
+  const handleAddToCart = () => {
+    if (!isInCart) {
+      addToCart(product);
+      setShowAddedMessage(true);
+      // Hide the message after 2 seconds
+      setTimeout(() => {
+        setShowAddedMessage(false);
+      }, 2000);
+    }
+  };
 
   return (
     <div className="amazon-card">
@@ -27,10 +39,11 @@ const ProductCard = ({ product }) => {
         <p>₹{product.price}</p>
         <div className="product-card-actions">
           <button
-            className={isInCart ? "amazon-btn amazon-remove" : "amazon-btn"}
-            onClick={() => addToCart(product)}
+            className={showAddedMessage ? "amazon-btn amazon-success" : "amazon-btn"}
+            onClick={handleAddToCart}
+            disabled={showAddedMessage}
           >
-            {isInCart ? "❌ Remove from Cart" : "🛒 Add to Cart"}
+            {showAddedMessage ? "✅ Added to Cart!" : "🛒 Add to Cart"}
           </button>
         </div>
       </div>
