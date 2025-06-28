@@ -979,20 +979,22 @@ body {
 }
 
 .logout-item {
-  color: #dc3545;
+  color: #f90000 !important;
+  font-weight: 500;
+  background: none !important;
 }
 
 .logout-item:hover {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: #ffffff !important;
+  color: #ff0000 !important;
 }
 
 .logout-item svg {
-  color: #dc3545;
+  color: #ff0000 !important;
 }
 
 .logout-item:hover svg {
-  color: #721c24;
+  color: #fc0000 !important;
 }
 
 /* Responsive design for account dropdown */
