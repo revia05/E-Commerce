@@ -4,6 +4,7 @@
     align-items: center;
     background-color: #131921;
     padding: 14px 20px;
+    flex-wrap: wrap;
   }
   
   .amazon-logo a {
@@ -11,25 +12,169 @@
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  .amazon-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
   
   .amazon-nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
     font-size: 16px;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
   }
   
-  .cart-link::after {
-    content: '';
+  .amazon-nav a:hover {
+    color: #febd69;
+  }
+  
+  /* Enhanced Cart Icon Styles */
+  .cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .cart-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .cart-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-icon {
+    color: white;
+    transition: transform 0.2s ease;
+  }
+  
+  .cart-link:hover .cart-icon {
+    transform: scale(1.1);
+  }
+  
+  .cart-count {
     position: absolute;
-    top: -6px;
-    right: -10px;
-    background: red;
-    width: 8px;
-    height: 8px;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4444;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    animation: cartBounce 0.3s ease;
+  }
+  
+  @keyframes cartBounce {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .cart-text {
+    font-weight: 500;
+  }
+  
+  /* Responsive Design for Cart Icon */
+  @media (max-width: 768px) {
+    .amazon-header {
+      padding: 12px 16px;
+    }
+    
+    .amazon-logo a {
+      font-size: 20px;
+    }
+    
+    .amazon-nav {
+      gap: 16px;
+    }
+    
+    .amazon-nav a {
+      font-size: 14px;
+      gap: 6px;
+    }
+    
+    .cart-link {
+      padding: 6px 10px;
+    }
+    
+    .cart-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .cart-count {
+      font-size: 11px;
+      min-width: 16px;
+      height: 16px;
+      top: -6px;
+      right: -6px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .amazon-header {
+      padding: 10px 12px;
+    }
+    
+    .amazon-logo a {
+      font-size: 18px;
+    }
+    
+    .amazon-nav {
+      gap: 12px;
+    }
+    
+    .amazon-nav a {
+      font-size: 13px;
+      gap: 4px;
+    }
+    
+    .cart-link {
+      padding: 5px 8px;
+    }
+    
+    .cart-icon {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .cart-count {
+      font-size: 10px;
+      min-width: 14px;
+      height: 14px;
+      top: -5px;
+      right: -5px;
+    }
+    
+    .cart-text {
+      display: none; /* Hide "Cart" text on very small screens */
+    }
   }
   
   /* PRODUCT CARD */
@@ -111,50 +256,3 @@
   .footer-links a:hover {
     text-decoration: underline;
   }
-  .amazon-header {
-  display: flex;
-  align-items: center;
-  background-color: #131921;
-  padding: 10px 20px;
-  flex-wrap: wrap;
-}
-
-.amazon-logo a {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.amazon-search {
-  flex: 1;
-  display: flex;
-  margin: 0 20px;
-  max-width: 600px;
-}
-
-.amazon-search input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  font-size: 14px;
-}
-
-.amazon-search button {
-  background-color: #febd69;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.amazon-nav a {
-  color: white;
-  margin-left: 16px;
-  text-decoration: none;
-  font-size: 14px;
-  white-space: nowrap;
-}
