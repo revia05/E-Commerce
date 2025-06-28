@@ -20,7 +20,7 @@ const CheckoutPage = () => {
   const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
   const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
 
-  if (cartItems.length === 0) {
+  if (cartItems.length === 0 && !success) {
     return (
       <div className="cart-page">
         <h1>Checkout</h1>
@@ -50,7 +50,9 @@ const CheckoutPage = () => {
     addOrder(order);
     setCartItems([]);
     setSuccess(true);
+    console.log("Order placed, cart emptied, redirecting in 2s");
     setTimeout(() => {
+      console.log("Redirecting to /orders");
       navigate("/orders");
     }, 2000);
   };
