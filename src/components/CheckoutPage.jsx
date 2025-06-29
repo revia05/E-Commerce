@@ -166,6 +166,7 @@ const CheckoutPage = () => {
         };
         
         addOrder(order);
+        console.log("Order created successfully:", order);
         setCartItems([]);
         setSuccess(true);
         
@@ -191,6 +192,7 @@ const CheckoutPage = () => {
       };
       
       addOrder(order);
+      console.log("COD Order created successfully:", order);
       setCartItems([]);
       setSuccess(true);
       

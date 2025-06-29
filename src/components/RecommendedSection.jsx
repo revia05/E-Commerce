@@ -10,7 +10,6 @@ const RecommendedSection = () => {
 
   useEffect(() => {
     const clickedProductIds = JSON.parse(localStorage.getItem("userClickedProducts") || "[]");
-    const API_URL = import.meta.env.VITE_BACKEND_URL;
 
     // ⛔ Don't fetch if nothing in localStorage
     if (clickedProductIds.length === 0) {
@@ -18,7 +17,7 @@ const RecommendedSection = () => {
       return;
     }
   
-    /*const fetchRecommendations = async () => {
+    const fetchRecommendations = async () => {
       try {
         const res = await fetch("http://localhost:5000/api/recommend-multi", {
           method: "POST",
@@ -35,30 +34,10 @@ const RecommendedSection = () => {
       } finally {
         setLoading(false);
       }
-    };*/
-    const fetchRecommendations = async () => {
-      try {
-        const res = await fetch(`${API_URL}/api/recommend-multi`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ product_ids: clickedProductIds }),
-        });
-    
-        const data = await res.json();
-        setRecommended(data);
-      } catch (error) {
-        console.error("Error fetching recommendations:", error);
-      } finally {
-        setLoading(false);
-      }
     };
-    
 
     fetchRecommendations();
   }, []);
-
 
   return (
     <div className="recommended-section">
