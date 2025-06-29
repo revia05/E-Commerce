@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import pandas as pd
+import os
 from flask_cors import CORS
 from recommender import get_recommendations, get_recommendations_for_multiple
 
@@ -38,4 +39,5 @@ def recommend_multi():
 
 # ✅ Run server
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)#
+
