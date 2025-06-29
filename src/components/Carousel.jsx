@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { dummyProducts } from "../data/dummyProducts";
 
 const Carousel = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -37,6 +39,11 @@ const Carousel = () => {
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
+  };
+
+  const handleShopNow = () => {
+    const currentProduct = carouselProducts[currentSlide];
+    navigate(`/product/${currentProduct.id}`);
   };
 
   return (
@@ -82,7 +89,7 @@ const Carousel = () => {
                     <span className="feature-tag">Fresh</span>
                     <span className="feature-tag">Pure</span>
                   </div>
-                  <button className="carousel-cta">
+                  <button className="carousel-cta" onClick={handleShopNow}>
                     <span>Shop Now</span>
                     <span className="cta-arrow">→</span>
                   </button>
