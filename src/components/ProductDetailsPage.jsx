@@ -29,6 +29,17 @@ const ProductDetailsPage = () => {
 
   const isInWishlistState = isInWishlist(product.id);
 
+  // Size-based pricing
+  const sizePrices = {
+    "500g": Math.round(product.price * 0.6),
+    "1kg": product.price,
+    "2kg": Math.round(product.price * 1.8),
+    "5kg": Math.round(product.price * 4.2)
+  };
+
+  const currentPrice = sizePrices[selectedSize];
+  const originalPrice = Math.round(currentPrice * 1.2);
+
   // Mock product images (in real app, these would come from product data)
   const productImages = [
     product.image,
@@ -41,7 +52,7 @@ const ProductDetailsPage = () => {
   const specifications = {
     "Brand": "Premium Flour Co.",
     "Type": product.name.includes("Atta") ? "Whole Wheat" : product.name.includes("Besan") ? "Chickpea" : "Rice",
-    "Weight": "1kg",
+    "Weight": selectedSize,
     "Shelf Life": "12 months",
     "Storage": "Store in a cool, dry place",
     "Origin": "India",
@@ -58,11 +69,11 @@ const ProductDetailsPage = () => {
   ];
 
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity, size: selectedSize });
+    addToCart({ ...product, quantity, size: selectedSize, price: currentPrice });
   };
 
   const handleBuyNow = () => {
-    addToCart({ ...product, quantity, size: selectedSize });
+    addToCart({ ...product, quantity, size: selectedSize, price: currentPrice });
     navigate("/checkout");
   };
 
@@ -123,8 +134,8 @@ const ProductDetailsPage = () => {
           <div className="product-price-section">
             <div className="price-container">
               <span className="currency">₹</span>
-              <span className="current-price">{product.price}</span>
-              <span className="original-price">₹{Math.round(product.price * 1.2)}</span>
+              <span className="current-price">{currentPrice}</span>
+              <span className="original-price">₹{originalPrice}</span>
               <span className="discount">20% off</span>
             </div>
             <div className="delivery-info">
@@ -136,13 +147,14 @@ const ProductDetailsPage = () => {
             <div className="size-selection">
               <h3>Select Size</h3>
               <div className="size-options">
-                {["500g", "1kg", "2kg", "5kg"].map(size => (
+                {Object.entries(sizePrices).map(([size, price]) => (
                   <button
                     key={size}
                     className={`size-option ${selectedSize === size ? 'selected' : ''}`}
                     onClick={() => setSelectedSize(size)}
                   >
-                    {size}
+                    <div className="size-text">{size}</div>
+                    <div className="size-price">₹{price}</div>
                   </button>
                 ))}
               </div>
