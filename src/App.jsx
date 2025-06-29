@@ -12,6 +12,7 @@ import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
 import OrdersPage from "./components/OrdersPage";
 import CheckoutPage from "./components/CheckoutPage";
+import ProductDetailsPage from "./components/ProductDetailsPage";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -28,6 +29,7 @@ const App = () => (
             <main>
               <Routes>
                 <Route path="/" element={<SearchBar />} />
+                <Route path="/product/:productId" element={<ProductDetailsPage />} />
                 <Route path="/about" element={<AboutPage />} />    
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/cart" element={<CartPage />} />
