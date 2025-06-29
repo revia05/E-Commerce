@@ -3,6 +3,9 @@ import { dummyProducts } from "../data/dummyProducts";
 import ProductCard from "./ProductCard";
 import Carousel from "./Carousel";
 import "../styles/main.css";
+import RecommendedSection from "./RecommendedSection";
+
+const clickedProductIds = JSON.parse(localStorage.getItem("userClickedProducts") || "[]");
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -127,19 +130,22 @@ const SearchBar = () => {
 
       <Carousel />
 
-      <h2 style={{ marginTop: "30px" }}>
-        {query ? "Search Results:" : "All Products"}
-      </h2>
+      {/* 🔹 Recommended products before search results */}
+    <RecommendedSection baseProductId={1} />
 
-      {filteredProducts.length > 0 ? (
-        <div className="results-grid">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      ) : (
-        <p className="no-results">No matching products found.</p>
-      )}
+<h2 style={{ marginTop: "30px" }}>
+  {query ? "Search Results:" : "All Products"}
+</h2>
+
+{filteredProducts.length > 0 ? (
+  <div className="results-grid">
+    {filteredProducts.map((product) => (
+      <ProductCard key={product.id} product={product} />
+    ))}
+  </div>
+) : (
+  <p className="no-results">No matching products found.</p>
+)}
     </div>
   );
 };

@@ -1,0 +1,51 @@
+id,name,price,image,description
+1,Multigrain Atta,120,/img/multi.jpg,"A healthy blend of multiple grains, perfect for soft and nutritious rotis."
+2,Besan Flour,90,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras, sweets, and batters."
+3,Rice Flour,70,/img/rice.webp,"Smooth rice flour for crispy dosas, snacks, and gluten-free baking."
+4,Maida,50,/img/maida.jpg,"Refined wheat flour, perfect for baking cakes, breads, and pastries."
+5,Wheat Flour,100,/img/wheat.jpg,Traditional whole wheat flour for soft chapatis and wholesome breads.
+6,Organic Wheat Flour,110,/img/wheat.jpg,"Organically grown wheat flour, perfect for baking and cooking."
+7,Premium Rice Flour,85,/img/rice.webp,High-quality rice flour for making smooth and fluffy rice dishes.
+8,Classic Maida,55,/img/maida.jpg,"Classic wheat flour, ideal for baking traditional Indian breads."
+9,Healthy Multigrain Mix,130,/img/multi.jpg,A blend of multiple grains for a nutritious and wholesome meal.
+10,Chickpea Besan,95,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras and snacks."
+11,Stoneground Atta,125,/img/multi.jpg,Stoneground flour for traditional rotis and breads.
+12,Fine Besan,92,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras and snacks."
+13,Superfine Rice Flour,75,/img/rice.webp,Smooth rice flour for making smooth and fluffy rice dishes.
+14,All-Purpose Maida,60,/img/maida.jpg,"Versatile wheat flour, perfect for a variety of baking and cooking applications."
+15,Whole Wheat Flour,105,/img/wheat.jpg,Traditional whole wheat flour for soft chapatis and wholesome breads.
+16,Gluten-Free Atta,135,/img/multi.jpg,"Gluten-free flour blend, perfect for baking and cooking."
+17,Roasted Besan,98,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Roasted chickpea flour, ideal for making roasted snacks and batters."
+18,Brown Rice Flour,80,/img/rice.webp,Brown rice flour for making smooth and fluffy rice dishes.
+19,Refined Maida,65,/img/maida.jpg,"Refined wheat flour, perfect for baking cakes, breads, and pastries."
+20,Sharbati Wheat Flour,115,/img/wheat.jpg,Wheat flour for making soft and nutritious rotis.
+21,Protein Atta,140,/img/multi.jpg,Wheat flour with added protein for nutritious rotis and breads.
+22,Gram Flour,97,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for making gram flour snacks."
+23,Idli Rice Flour,78,/img/rice.webp,Smooth rice flour for making soft and fluffy idlis.
+24,Soft Maida,58,/img/maida.jpg,Wheat flour for making soft and nutritious rotis.
+25,MP Wheat Flour,108,/img/wheat.jpg,Whole wheat flour for making soft and nutritious rotis.
+26,Fiber Rich Atta,132,/img/multi.jpg,Wheat flour with added fiber for nutritious rotis and breads.
+27,Chana Besan,93,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras and snacks."
+28,White Rice Flour,72,/img/rice.webp,Smooth rice flour for making smooth and fluffy rice dishes.
+29,Premium Maida,62,/img/maida.jpg,"Refined wheat flour, perfect for baking cakes, breads, and pastries."
+30,Lokwan Wheat Flour,112,/img/wheat.jpg,Wheat flour for making soft and nutritious rotis.
+31,Low GI Atta,138,/img/multi.jpg,Wheat flour with a low glycemic index for nutritious rotis and breads.
+32,Desi Besan,99,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras and snacks."
+33,Red Rice Flour,82,/img/rice.webp,Smooth rice flour for making smooth and fluffy rice dishes.
+34,Cake Maida,68,/img/maida.jpg,Wheat flour for making soft and nutritious rotis.
+35,Punjab Wheat Flour,120,/img/wheat.jpg,Whole wheat flour for making soft and nutritious rotis.
+36,Omega Atta,145,/img/multi.jpg,Wheat flour with added omega-3 fatty acids for nutritious rotis and breads.
+37,Split Besan,94,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras and snacks."
+38,Sticky Rice Flour,77,/img/rice.webp,Smooth rice flour for making smooth and fluffy rice dishes.
+39,Bakery Maida,66,/img/maida.jpg,Wheat flour for making soft and nutritious rotis.
+40,Sharbati Gold Wheat,118,/img/wheat.jpg,Wheat flour for making soft and nutritious rotis.
+41,Vitamins Atta,142,/img/multi.jpg,Wheat flour with added vitamins for nutritious rotis and breads.
+42,Roasted Gram Besan,101,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Roasted chickpea flour, ideal for making roasted snacks and batters."
+43,Jasmine Rice Flour,79,/img/rice.webp,Smooth rice flour for making smooth and fluffy rice dishes.
+44,Ultra Maida,64,/img/maida.jpg,Wheat flour for making soft and nutritious rotis.
+45,Golden Wheat Flour,122,/img/wheat.jpg,Wheat flour for making soft and nutritious rotis.
+46,High Fiber Atta,136,/img/multi.jpg,Wheat flour with added fiber for nutritious rotis and breads.
+47,Fine Chana Besan,96,/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif,"Finely ground chickpea flour, ideal for pakoras and snacks."
+48,Sona Masoori Rice Flour,83,/img/rice.webp,Smooth rice flour for making smooth and fluffy rice dishes.
+49,Refined Cake Maida,70,/img/maida.jpg,Wheat flour for making soft and nutritious rotis.
+50,MP Gold Wheat Flour,114,/img/wheat.jpg,Wheat flour for making soft and nutritious rotis.

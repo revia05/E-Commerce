@@ -17,6 +17,7 @@ import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import { AuthProvider } from "./context/AuthContext";
 import { OrdersProvider } from "./context/OrdersContext";
+
 import "./styles/main.css";
 
 const App = () => (

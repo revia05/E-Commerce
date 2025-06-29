@@ -14,6 +14,13 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = (e) => {
     e.stopPropagation();
     addToCart(product);
+  
+    // Track clicked product in localStorage
+    let viewed = JSON.parse(localStorage.getItem("userClickedProducts") || "[]");
+    if (!viewed.includes(product.id)) {
+      viewed.push(product.id);
+      localStorage.setItem("userClickedProducts", JSON.stringify(viewed));
+    }
   };
 
   const handleCardClick = () => {
@@ -23,11 +30,26 @@ const ProductCard = ({ product }) => {
   return (
     <div className="amazon-card" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
       <div className="product-card-image-container">
-        <img src={product.image} alt={product.name} />
+      {product.image ? (
+  <img src={product.image} alt={product.name} />
+) : (
+  <img src="/img/default.jpg" alt="default product" />
+)}
+
         <button
           className={`wishlist-btn ${isInWishlistState ? 'wishlist-btn-active' : ''}`}
-          onClick={e => { e.stopPropagation(); addToWishlist(product); }}
-          aria-label={isInWishlistState ? 'Remove from wishlist' : 'Add to wishlist'}
+          onClick={e => { 
+            e.stopPropagation(); 
+            addToWishlist(product); 
+            
+            // Also track in localStorage
+            let viewed = JSON.parse(localStorage.getItem("userClickedProducts") || "[]");
+            if (!viewed.includes(product.id)) {
+              viewed.push(product.id);
+              localStorage.setItem("userClickedProducts", JSON.stringify(viewed));
+            }
+          }}
+          
         >
           {isInWishlistState ? '❤️' : '🤍'}
         </button>
