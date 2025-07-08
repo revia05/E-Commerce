@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+'''from flask import Flask, jsonify, request
 import pandas as pd
 import os
 from flask_cors import CORS
@@ -45,4 +45,39 @@ import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Use Render's port if available
+    app.run(host="0.0.0.0", port=port)
+'''
+
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import pandas as pd
+from recommender import get_recommendations, get_recommendations_for_multiple
+
+app = Flask(__name__)
+CORS(app, origins="*", supports_credentials=True)  # ✅ This is critical
+
+df = pd.read_csv("products.csv")
+df.fillna({"image": "/img/default.jpg"}, inplace=True)
+
+@app.route("/api/recommend")
+def recommend():
+    product_id = int(request.args.get("product_id", 1))
+    recommended_ids = get_recommendations(product_id)
+    recommended_products = df[df["id"].isin(recommended_ids)]
+    return jsonify(recommended_products.to_dict(orient="records"))
+
+@app.route("/api/recommend-multi", methods=["POST", "OPTIONS"])
+def recommend_multi():
+    if request.method == "OPTIONS":
+        return '', 204  # ✅ Respond to CORS preflight
+
+    data = request.get_json()
+    product_ids = data.get("product_ids", [])
+    recommended_ids = get_recommendations_for_multiple(product_ids)
+    recommended_products = df[df["id"].isin(recommended_ids)]
+    return jsonify(recommended_products.to_dict(orient="records"))
+
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
