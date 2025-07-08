@@ -47,18 +47,8 @@ export const dummyProducts = [
     { id: 46, name: "High Fiber Atta", price: 136, image: "/img/multi.jpg", description: "Wheat flour with added fiber for nutritious rotis and breads." },
     { id: 47, name: "Fine Chana Besan", price: 96, image: "/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif", description: "Finely ground chickpea flour, ideal for pakoras and snacks." },
     { id: 48, name: "Sona Masoori Rice Flour", price: 83, image: "/img/rice.webp", description: "Smooth rice flour for making smooth and fluffy rice dishes." },
-    { id: 49, name: "Bakery Maida", price: 70, image: "/img/maida.jpg", description: "Wheat flour for making soft and nutritious rotis." },
-    { id: 50, name: "Double Filtered Besan", price: 114, image: "/img/Laxmi-Besan-Chickpea-Flour_b175f891-e632-4aec-990b-57825615f3a2.bf98feae9e4d12f9a30d7bd0b1ac1117.avif", description: "Wheat flour for making soft and nutritious rotis." },
-    { id: 51, name: "Pearl Millet Flour", price: 65, image: "/img/pearl.jpg", description: "Made from premium MP wheat used for soft chapatis and rotis." },
-    { id: 52, name: "White Sorghum Flour", price: 76, image: "/img/sorghum.jpg", description: "Refined white flour for bakery items samosas pastries." },
-    { id: 53, name: "Finger Millet Flour", price: 100, image: "/img/millet.jpg", description: "Made from Bengal gram used for pakoras sweets and snacks." },
-    { id: 54, name: "Fine Corn Flour", price: 60, image: "/img/CornFlour.jpg", description: "Gluten-free used in modak dosa and South Indian dishes." },
-    { id: 55, name: "Bombay Rava", price: 120, image: "/img/BombaiRava.jpg", description: "Used in ragi dosa porridge highly nutritious." },
-    { id: 56, name: "Barley Whole Flour", price: 80, image: "/img/barley.jpg", description: "Used for making jau roti good for digestion and weight loss." },
-    { id: 57, name: "Coarse Chana Besan", price: 96, image: "/img/besan.jpg", description: "Smooth texture used for sweets like laddus dhokla and kadhi." },
-    { id: 58, name: "Aashirvaad MP Sharbati", price: 110, image: "/img/aasirvad.jpg", description: "Slightly grainy ideal for pakoras chilla and traditional recipes" },
-    { id: 59, name: "24 Mantra Organic", price: 80, image: "/img/organic.jpg", description: "Dry roasted gram flour with nutty flavor used in laddus barfi etc." },
-    { id: 60, name: "Kabuli Chana Besan", price: 67, image: "/img/rajdhani.jpg", description: "Made from small desi chana richer taste and aroma." }
+    { id: 49, name: "Refined Cake Maida", price: 70, image: "/img/maida.jpg", description: "Wheat flour for making soft and nutritious rotis." },
+    { id: 50, name: "MP Gold Wheat Flour", price: 114, image: "/img/wheat.jpg", description: "Wheat flour for making soft and nutritious rotis." }
   ];
   
   
