@@ -48,13 +48,13 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port)
 '''
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
 import pandas as pd
 from recommender import get_recommendations, get_recommendations_for_multiple
 
 app = Flask(__name__)
-CORS(app, origins="*", supports_credentials=True)  # ✅ This is critical
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 df = pd.read_csv("products.csv")
 df.fillna({"image": "/img/default.jpg"}, inplace=True)
@@ -69,7 +69,11 @@ def recommend():
 @app.route("/api/recommend-multi", methods=["POST", "OPTIONS"])
 def recommend_multi():
     if request.method == "OPTIONS":
-        return '', 204  # ✅ Respond to CORS preflight
+        response = make_response()
+        response.headers["Access-Control-Allow-Origin"] = "*"
+        response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+        return response, 204
 
     data = request.get_json()
     product_ids = data.get("product_ids", [])
@@ -77,7 +81,8 @@ def recommend_multi():
     recommended_products = df[df["id"].isin(recommended_ids)]
     return jsonify(recommended_products.to_dict(orient="records"))
 
-if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+# ❌ Do NOT include this if using Gunicorn
+# if __name__ == "__main__":
+#     import os
+#     port = int(os.environ.get("PORT", 5000))
+#     app.run(host="0.0.0.0", port=port)
