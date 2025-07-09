@@ -1,0 +1,76 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Premium 3D Gold Text Effect */
+.premium-3d-text {
+  text-shadow:
+    0 2px 4px #bfa14a,
+    0 4px 8px #e5c97b,
+    0 8px 16px #a67c00,
+    1px 1px 0 #fff8dc,
+    2px 2px 6px #bfa14a;
+  position: relative;
+}
+.premium-shine {
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0.7) 100%);
+  mix-blend-mode: lighten;
+  opacity: 0.7;
+  border-radius: 0.5rem;
+  animation: shine-move 2.5s linear infinite;
+}
+@keyframes shine-move {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+/* Glassmorphism header and gold border accent */
+.border-gradient-to-r {
+  border-image: linear-gradient(to right, #ffd700, #fffbe6, #bfa14a) 1;
+}
+.bg-white\/70 {
+  background-color: rgba(255,255,255,0.7);
+}
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
