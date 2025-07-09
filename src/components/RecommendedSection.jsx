@@ -54,7 +54,6 @@ const RecommendedSection = () => {
         setLoading(false);
       }
     };
-    
 
     fetchRecommendations();
   }, []);
