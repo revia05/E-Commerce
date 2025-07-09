@@ -1,4 +1,4 @@
-'''from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request
 import pandas as pd
 import os
 from flask_cors import CORS
@@ -80,3 +80,4 @@ def recommend_multi():
     recommended_ids = get_recommendations_for_multiple(product_ids)
     recommended_products = df[df["id"].isin(recommended_ids)]
     return jsonify(recommended_products.to_dict(orient="records"))
+'''
